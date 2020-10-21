@@ -1,0 +1,45 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button ></ion-menu-button>
+    </ion-buttons>
+
+    <ion-buttons slot="end">
+      <ion-button color="secondary" (click)="searchgirlclicked()">       
+          <ion-icon slot="icon-only" name="female-outline"></ion-icon>        
+      </ion-button>
+
+      <ion-button color="secondary" (click)="searchboyclicked()">  
+          <ion-icon slot="icon-only" name="male-outline"></ion-icon>
+      </ion-button>
+      
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <!-- 검색화면 구현입니다. 
+  입력 값이 일치하는 스트리머들만 목록에 표시되게 만들어 주었습니다. 그리고 스트리머를 클릭하였을 시 이를 라우팅해서 recommend페이지에 동적으로 생성 될 수 있게 만들었습니다.-->
+  <ion-grid>
+    <ion-row style="margin-top: 30px;">
+      <ion-col style="background-color: #ffffff; border-radius: 150px;">
+        <h1 style="font-size: 30px; margin-top: 50px; margin-bottom: 1px; font-family: HSBombaram;">WA! STREAMER!</h1>
+        <h2 style="font-size: 20px;font-family: HSBombaram;">for boy</h2>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <!--placeholder는 검색창 부분에 입력내용이 없을 때 고정적으로 표시해주는 메세지, ionchange는 입력이 실행됐을 때 search라는 event를 발생시켜줍니다. debounce는 이벤트가 실행되는 시간을 지연시켜줍니다. showCancelButton는 캔슬 버튼을 표시해줍니다.-->
+  <div class="search_section">
+    <ion-searchbar class="search_bar" placeholder="스트리머 검색" (ionChange)="search($event)" [debounce]="250" showCancelButton="always" clearIcon></ion-searchbar>
+    <!--검색이 됐을 때 하단에 검색된 스트리머들의 리스트를 표현해 주는 곳입니다.-->
+    <ion-list class="searched_streamer_list">
+      <!--검색된 스트리머들을 클릭하면 유사도 페이지로 넘어가게 해 줍니다. ngFor를 통해 전체 스트리머들 중에 검색된 스트리머를 뽑아줍니다.-->
+      <ion-item [routerLink]="['/recommend-boy', boystreamer]"
+      *ngFor="let boystreamer of boystreamers"> {{boystreamer.Name}}
+      </ion-item>
+    </ion-list>
+  </div>
+
+</ion-content>

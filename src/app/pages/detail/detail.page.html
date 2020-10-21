@@ -1,0 +1,74 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid> <!-- //S grid로 전체 구역을 만든다. -->
+
+    <ion-row> <!-- //S 먼저 행을 지정하고 그 행에 열을 지정하여 보이는 위치를 결정-->
+      <!--제목 부분 css 입니다. ion-align-self-center를 통해 가운데 정렬 하였고, style은 순서대로 좌우 넓이, 가운데정렬, 폰트종류 입니다.-->
+      <!-- //S 폰트를 지정하는 경우 app.component.scss에서 정의하고 끌어 와야 합니다. --> 
+      <ion-col class="ion-align-self-center" style="width: 100%; text-align: center; font-family: HSBombaram;">
+        <!--검색된 스트리머 이름의 폰트사이즈, 색상-->
+        <h1 style="font-size: xx-large; color:#d5b8ff ;">{{streamer.Name}}</h1>
+        <!-- {{streamer.Name}}은 검색한 스트리머의 이름을 라우팅하여 동적으로 받아옵니다.-->
+      </ion-col>
+    </ion-row>
+
+   
+    <ion-row style="margin-top: 10%;">
+      <ion-col style="margin-top: 30px; text-align:left">
+        <ion-button style="--background:white" (click)="leftButton()">
+          <ion-icon name="arrow-back-sharp"></ion-icon>
+        </ion-button>
+      </ion-col>
+      <ion-col style="width: 100%; ">
+      <ion-avatar class="BJ_Profile_Photo">
+        <!--스트리머 이미지를 avatar 속성을 통해 round shape로 구현하였습니다.-->
+        <img src="{{streamer.Img}}">
+        <!-- S FireBase에 등록되어 있는 스트리머 이미지를 라우팅하여 끌어옵니다.-->
+      </ion-avatar>
+      </ion-col>
+      <ion-col style="margin-top: 30px; text-align:right">
+        <ion-button style="--background:white" (click)="rightButton()">
+          <ion-icon name="arrow-forward-sharp"></ion-icon>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+
+    
+    <ion-row style="margin-top: 20px; text-align: center;">
+      <ion-col *ngIf="streamer.Afreeca != '' ">
+        <!-- ngIf 는 If문을 돌리는 것이고 , streamer.Afreeca의 값이 Null이 아니면 끌어오는 것 -->
+        <a href="{{streamer.Afreeca}}"><img style="width: 50px; height: 50px;" src="https://firebasestorage.googleapis.com/v0/b/wa-streamer.appspot.com/o/246x0w.png?alt=media&token=c1315c4e-5565-468d-b47f-612344a038ab" alt=""></a>
+      </ion-col>
+      <ion-col *ngIf="streamer.Twich != '' ">
+        <a href="{{streamer.Twich}}"><img style="width: 50px; height: 50px;" src="https://firebasestorage.googleapis.com/v0/b/wa-streamer.appspot.com/o/580b57fcd9996e24bc43c540.png?alt=media&token=2e97b094-64ec-478f-9128-5b168e3d5db3" alt=""></a>   
+      </ion-col>
+      <ion-col *ngIf="streamer.Youtube != '' ">
+        <a href="{{streamer.Youtube}}"><img style="width: 50px; height: 50px;"src="https://firebasestorage.googleapis.com/v0/b/wa-streamer.appspot.com/o/icons8-youtube-480.png?alt=media&token=eb16f3a9-e30d-4747-8e8f-893dee1578a2" alt=""></a>  
+      </ion-col>
+      <ion-col *ngIf="streamer.Facebook != '' ">
+        <a href="{{streamer.Facebook}}"><img style="width: 50px; height: 50px;"src="https://firebasestorage.googleapis.com/v0/b/wa-streamer.appspot.com/o/icons8-facebook-old-480.png?alt=media&token=5ec2500c-b8b4-4fff-b1a1-0abd21df5e37" alt=""></a>
+      </ion-col>
+      <ion-col *ngIf="streamer.Instagram != '' ">
+        <a href="{{streamer.Instagram}}"><img style="width: 50px; height: 50px;"src="https://firebasestorage.googleapis.com/v0/b/wa-streamer.appspot.com/o/icons8-instagram-480.png?alt=media&token=75fed1ca-6a5a-4fd5-9d20-fc43c13a75e9" alt=""></a>       
+      </ion-col>
+    </ion-row>
+   <!--intro 섹션입니다. 가운데정렬, 상단 공백 40px-->
+    <ion-row style="text-align: center; margin-top: 40px">
+      <ion-col class="BJ_Intro_Section">
+        {{streamer.Name}} ->
+        {{streamer.Intro}}
+      </ion-col>
+    </ion-row>
+    
+
+  </ion-grid>
+
+
+</ion-content>

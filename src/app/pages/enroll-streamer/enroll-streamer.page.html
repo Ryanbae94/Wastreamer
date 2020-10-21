@@ -1,0 +1,37 @@
+
+<!--맨 위 헤더 클래스의 css입니다. 제목을 가운데로 정렬하고 상단 부분의 공백을 60px만큼 주었습니다. ion-title은 순서대로 폰트의 색상, 사이즈, 종류 입니다.-->
+<ion-header class="ion-no-border" style="text-align: center;">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-back-button defaultHref="/search"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!--본문 부분의 css입니다. 제목과 본문 사이의 공백을 50px만큼 주었고 본문의 폰트 종류는 infinitySans-RegularA1 입니다.-->
+  <ion-grid style="font-family: InfinitySans-RegularA1;">
+    <ion-row>
+      <ion-col>
+        <ion-title style="margin-top: 30px; text-align: center; color: #2e3131; font-size: xx-large; font-family: HSBombaram;">스트리머 추천</ion-title>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col style="margin-top: 80px; text-align: center;">스트리머 추천 서비스를 진행하고 있습니다.</ion-col>
+    </ion-row>
+    <ion-row>
+      <!--본문에 들어간 이미지 입니다.-->
+      <ion-col style="text-align: center;"><a href="http://pf.kakao.com/_xfBxbYxb"><img height="150px" width="150px" src="https://mkfount.com/wp-content/uploads/2018/10/%EC%B9%B4%EC%B9%B4%EC%98%A4%ED%86%A1.png"></a></ion-col>
+    </ion-row>
+    <ion-row>
+      <!--span은 본문 중간의 영역을 설정해서 그 부분만 변경해 줍니다.-->
+      <ion-col style="text-align: center;">카카오톡 <span style="color:#f22613">TEST NAME</span></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col style="text-align: center;">당신의 <span style="color:#f22613;">최애</span> 스트리머를 알려주세요.</ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

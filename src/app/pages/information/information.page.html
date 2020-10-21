@@ -1,0 +1,50 @@
+<!--맨 위 헤더 클래스의 css입니다. 제목을 가운데로 정렬하고 상단 부분의 공백을 60px만큼 주었습니다. ion-title은 순서대로 폰트의 색상, 사이즈, 종류 입니다.-->
+<ion-header class="ion-no-border" style="text-align: center;">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-back-button defaultHref="/search"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<!--본문 부분의 css입니다.-->
+<ion-content style="font-family: InfinitySans-RegularA1">
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-title style="margin-top: 30px; color: #2e3131; font-size: x-large; font-family: HSBombaram;">I N F O</ion-title>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+<!--본문에 들어간 scop 이미지입니다. ion-avatar를 사용하여 이미지 shape를 round로 설정 하였습니다.-->
+  <div style="margin-top: 60px">
+    <ion-avatar class="scop_profile">      
+      <img src="https://firebasestorage.googleapis.com/v0/b/wa-streamer.appspot.com/o/scop.png?alt=media&token=cf950d3f-0b30-4bc2-86ab-931ff5a4bb1e">
+    </ion-avatar>
+  </div>
+
+  <!--ion-col 전체 태그에 공통된 css 속성을 설정해 주었고, 각자 라인에 필요한 속성들만 따로 style을 지정해 주었습니다.-->
+  <ion-grid style="margin-top: 20px">
+    <ion-row>
+      <ion-col><span style="color:#68c7fa">WA! STREAMER!</span> 는 SCOP에서 개발한</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>스트리머 추천 어플리케이션 입니다.</ion-col> 
+    </ion-row>
+    <ion-row>
+      <!--본문을 두 파트로 나누었고 각 파트의 본문 사이 거리를 10px로 설정했습니다.-->
+      <ion-col style="margin-top: 10px">최적의 알고리즘을 통해 여러분의 취향에 맞는</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>스트리머를 추천합니다.</ion-col>
+    </ion-row>
+    <ion-row>
+      <!--연락처 부분과 본문 사이의 거리를 15px로 설정하였고, 연락처 부분의 폰트 사이즈를 small로 overriding 하였습니다.-->
+      <ion-col style="margin-top: 15px; font-size: small">이메일 test@scop.com | 카카오톡 @와스트리머(Wa! Streamer!)</ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

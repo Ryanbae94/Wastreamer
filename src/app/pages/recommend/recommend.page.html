@@ -1,0 +1,125 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar >
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+
+
+  <ion-grid  style="margin-top: 50px; ">
+    <ion-row style="text-align: center;">
+      <ion-col>
+        <!--제목 부분 css 입니다. style은 순서대로 폰트 색상, 사이즈, 종류 입니다.-->
+        <ion-label style="color: #2e3131; font-size: x-large; font-family: HSBombaram;">방송 유사도 맵</ion-label>
+      </ion-col>
+    </ion-row>
+    
+    <ion-row  style="margin-top: 30px; margin-bottom: 40px;">
+      <!--col 부분에 class를 ion-align-self-end(영역의 끝 부분에 정렬해 줌), first 두 가지를 부여 하였습니다.-->
+      <ion-col size="2.4">
+
+      </ion-col>
+      <ion-col size="2.4" class="ion-align-self-end first" >
+        <!--추천 알고리즘을 통해 뽑아온 첫 번째 streamer를 라우팅해서 가져옵니다.-->
+        <ion-avatar  [routerLink]="['/recommend', points[1].streamer]" >
+          <img src="{{points[1].streamer.Img}}">
+          <ion-label>{{points[1].streamer.Name}}</ion-label>
+        </ion-avatar>
+      </ion-col>
+      <!--두 번째 스트리머-->
+      <ion-col size="2.4">
+
+      </ion-col>
+      <ion-col size="2.4" class="second">
+        <ion-avatar  [routerLink]="['/recommend', points[2].streamer]" >
+          <img src="{{points[2].streamer.Img}}">
+          <ion-label>{{points[2].streamer.Name}}</ion-label>
+        </ion-avatar>
+      </ion-col>
+      <ion-col size="2.4">
+
+      </ion-col>
+    </ion-row>
+    <ion-row >
+      <ion-col size="3" size-lg offset="2" >
+
+      </ion-col>
+      <ion-col size="3" size-lg offset="2" >
+
+      </ion-col>
+    </ion-row>
+    <ion-row  >
+      <!--세 번째 스트리머-->
+      <ion-col size="2.4" class="third" >
+        <ion-avatar  [routerLink]="['/recommend', points[3].streamer]" >
+          <img src="{{points[3].streamer.Img}}">
+          <ion-label>{{points[3].streamer.Name}}</ion-label>
+        </ion-avatar>
+      </ion-col>
+      <ion-col size="2.4">
+
+      </ion-col>  
+      <ion-col size="2.4" >
+        <!--search 페이지에서 검색한 메인 스트리머-->
+          <ion-avatar  [routerLink]="getTop6()">
+            <img src="{{points[0].streamer.Img}}">
+            <ion-label>{{points[0].streamer.Name}}</ion-label>
+          </ion-avatar>
+      </ion-col>
+      <ion-col size="2.4">
+
+      </ion-col>
+      <!--네 번째 스트리머-->
+      <ion-col size="2.4" class="forth">
+        <ion-avatar  [routerLink]="['/recommend', points[4].streamer]" >
+          <img src="{{points[4].streamer.Img}}">
+          <ion-label>{{points[4].streamer.Name}}</ion-label>
+        </ion-avatar>
+      </ion-col>
+    </ion-row>
+    <ion-row >
+      <ion-col size="3" size-lg offset="2" >
+
+      </ion-col>
+      <ion-col size="3" size-lg offset="2" >
+
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <!--다섯 번째 스트리머-->
+      <ion-col size="2.4">
+
+      </ion-col>
+      <ion-col size="2.4" class="five" style="margin-top: 50px;">
+        <ion-avatar  [routerLink]="['/recommend', points[5].streamer]" >
+          <img src="{{points[5].streamer.Img}}">
+          <ion-label>{{points[5].streamer.Name}}</ion-label>
+        </ion-avatar>
+      </ion-col>
+      <!--여섯 번째 스트리머-->
+      <ion-col size="2.4">
+
+      </ion-col>
+      <ion-col size="2.4" class="six" style="margin-top: 50px;">
+        <ion-avatar  [routerLink]="['/recommend', points[6].streamer]" >
+          <img src="{{points[6].streamer.Img}}">
+          <ion-label>{{points[6].streamer.Name}}</ion-label>
+        </ion-avatar>
+      </ion-col>
+      <ion-col size="2.4">
+
+      </ion-col>
+    </ion-row>
+    <ion-row style="text-align: center;">
+      <ion-col style="margin-top: 40px;" >
+        <ion-button color="primary" (click)="refresh()">더보기</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+    
+       
+</ion-content>

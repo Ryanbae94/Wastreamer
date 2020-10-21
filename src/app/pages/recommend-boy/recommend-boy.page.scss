@@ -1,0 +1,65 @@
+//스트리머의 사진이 나오는 방식을 애니메이션으로 구현 하였습니다. fadeIn 방식을 사용하여 사진의 투명도를 0~100까지 0.25초 단위로 증가시킵니다.
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+      }
+      25% {
+        opacity: 0.25;
+      }
+      50% {
+        opacity: 0.5;
+      }
+      75% {
+        opacity: 0.75;
+      }
+      100% {
+        opacity: 1;
+      }
+}
+//6명의 스트리머 사진에 각각 fadeIn 애니메이션 효과를 부여한 부분.
+.first{
+    animation-name: fadeIn;
+    animation-duration: 1s;
+}
+
+.second{
+    animation-name: fadeIn;
+    animation-duration: 1.25s;
+}
+.third{
+    animation-name: fadeIn;
+    animation-duration: 1.5s;
+}
+.forth{
+    animation-name: fadeIn;
+    animation-duration: 1.75s;
+}
+.five{
+    animation-name: fadeIn;
+    animation-duration: 2s;
+}
+.six{
+    animation-name: fadeIn;
+    animation-duration: 2.25s;
+}
+
+
+//본문의 각 사진들과 텍스트를 가운데 정렬
+ion-col{    
+    text-align: center;
+}
+//전체 grid 영역의 padding을 0으로 설정
+ion-grid{    
+    --ion-grid-padding: 0;
+}
+
+ion-item{
+  border: none;
+  --background:white;
+}
+
+ion-label{
+  text-align: center;
+  color: #2e3131;
+  font-family: InfinitySans-RegularA1;
+}
